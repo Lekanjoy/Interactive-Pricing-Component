@@ -1,7 +1,6 @@
 let range = document.getElementById("range");
 let pageViews = document.getElementById("views");
 let price = document.getElementById("price");
-let priceDesktop = document.getElementById("priceDesk");
 let duration = document.getElementById("duration");
 let checkbox = document.getElementById("checkbox");
 let label = document.getElementById("label");
@@ -31,7 +30,6 @@ function setValueAndBGColor() {
   if (checkbox.checked) {
     label.style.backgroundColor = "hsl(174, 86%, 45%)";
     price.innerHTML = `$${(priceValues[range.value] * discount).toFixed(2)}`;
-    priceDesktop.innerHTML = `$${(priceValues[range.value] * discount).toFixed(2)}`;
   } else {
     label.style.backgroundColor = "hsl(224, 65%, 95%)";
     price.innerHTML = `$${priceValues[range.value]}.00`;
@@ -43,3 +41,5 @@ function setLowerFillColor() {
   let percent = ((range.value - range.min) / (range.max - range.min)) * 100;
   range.style.background = `linear-gradient(to right, hsl(174, 77%, 80%) 0%, hsl(174, 77%, 80%) ${percent}%, hsl(224, 65%, 95%) ${percent}%, hsl(224, 65%, 95%) 100%)`;
 }
+
+
